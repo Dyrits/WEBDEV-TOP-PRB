@@ -184,7 +184,7 @@ function battle(pokemon, pokemonCOM) {
     pokemon.experience += 100;
     battleWon ++;
     appendHistory("p", "Your pokemon won the battle!")
-    appendHistory("hr");
+
     if (pokemonCOM.evolveStage > pokemon.evolveStage) {
       pokemon.experience += 100;
       appendHistory("p", "The fight was quite hard.")
@@ -192,22 +192,21 @@ function battle(pokemon, pokemonCOM) {
       pokemon.experience -= 50;
       appendHistory("p", "The fight was easy.")
     }
+    appendHistory("hr");
   // Draw outcomes:
   } else if (pokemon.type === pokemonCOM.type) {
     if (pokemonCOM.evolveStage > pokemon.evolveStage) {
       battleWonCOM++;
       pokemonCOM.experience += 50;
       appendHistory("p", "Your pokemon is weaker and lost the battle.")
-      appendHistory("hr");
     } else if (pokemonCOM.evolveStage < pokemon.evolveStage) {
       battleWon++;
       pokemon.experience += 50;
       appendHistory("p", "Your pokemon is stronger and won the battle.")
-      appendHistory("hr");
     } else {
       appendHistory("p", "It's a draw!")
-      appendHistory("hr");
     }
+    appendHistory("hr");
   // Lost outcomes:
   } else {
     battleWonCOM ++;
