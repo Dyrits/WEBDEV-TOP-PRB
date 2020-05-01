@@ -134,6 +134,10 @@ confirmButton.addEventListener("click", () => {
   battle(currentPokemon, randomPokemonCOM)
   checkEvolve(pokemonArray)
   checkEvolve(pokemonArrayCOM)
+  randomSelectionCOM.removeChild(randomSelectionCOM.firstChild);
+  pokemonCOM.src = randomPokemonCOM.image;
+  pokemonCOM.name = randomPokemonCOM.name;
+  randomSelectionCOM.appendChild(pokemonCOM);
   updateStars(score, battleWon)
   updateStars(scoreCOM, battleWonCOM)
   updatePokemonSelection()
